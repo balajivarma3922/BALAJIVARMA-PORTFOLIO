@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bathula Balaji Varma • Portfolio</title>
+  <meta name="description" content="Portfolio of Bathula Balaji Varma — AI/ML enthusiast with internships at BIST Technology and TEGA." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme: light dark; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, sans-serif; }
+    /* Soft reveal animation */
+    .reveal { opacity: 0; transform: translateY(18px) scale(0.99); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.in-view { opacity: 1; transform: translateY(0) scale(1); }
+    /* Floating blob animation */
+    @keyframes floaty { 
+      0% { transform: translateY(0) translateX(0) scale(1); }
+      50% { transform: translateY(-12px) translateX(10px) scale(1.03); }
+      100% { transform: translateY(0) translateX(0) scale(1); }
+    }
+    /* Shimmer underline */
+    .shine-underline { position: relative; }
+    .shine-underline:after {
+      content: "";
+      position: absolute;
+      left: 0; bottom: -6px;
+      height: 4px; width: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.6), transparent);
+      transform: translateX(-100%);
+      animation: slide 2.8s ease-in-out infinite;
+      border-radius: 999px;
+      opacity: .6;
+    }
+    @keyframes slide {
+      0% { transform: translateX(-120%); }
+      60% { transform: translateX(5%); }
+      100% { transform: translateX(110%); }
+    }
+    /* Card hover lift */
+    .lift { transition: transform .35s ease, box-shadow .35s ease; }
+    .lift:hover { transform: translateY(-6px); }
+    /* Back-to-top */
+    .to-top { opacity: 0; visibility: hidden; transform: translateY(8px); transition: all .3s ease; }
+    .to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-indigo-950 via-slate-900 to-zinc-900 text-slate-100 selection:bg-indigo-400 selection:text-white">
+  <!-- Decorative animated blobs -->
+  <div aria-hidden="true" class="pointer-events-none fixed inset-0 overflow-hidden">
+    <div class="absolute -top-24 -left-24 w-80 h-80 bg-indigo-500/20 blur-3xl rounded-full animate-[floaty_10s_ease-in-out_infinite]"></div>
+    <div class="absolute top-40 -right-24 w-96 h-96 bg-fuchsia-500/20 blur-3xl rounded-full animate-[floaty_12s_ease-in-out_infinite]"></div>
+    <div class="absolute -bottom-24 left-1/4 w-72 h-72 bg-cyan-500/20 blur-3xl rounded-full animate-[floaty_14s_ease-in-out_infinite]"></div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/5 bg-slate-900/40 border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="flex items-center justify-between h-16">
+        <a href="#home" class="text-lg font-extrabold tracking-tight">
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-cyan-200 to-fuchsia-300">BBV</span>
+          <span class="sr-only">Home</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#about" class="hover:text-white/90 text-white/70">About</a>
+          <a href="#experience" class="hover:text-white/90 text-white/70">Experience</a>
+          <a href="#projects" class="hover:text-white/90 text-white/70">Projects</a>
+          <a href="#education" class="hover:text-white/90 text-white/70">Education</a>
+          <a href="#certifications" class="hover:text-white/90 text-white/70">Certifications</a>
+          <a href="#contact" class="hover:text-white/90 text-white/70">Contact</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <button id="themeToggle" class="group inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-sm">
+            <span class="i-sun hidden group-[.dark]:inline" aria-hidden="true">🌙</span>
+            <span class="i-moon inline group-[.dark]:hidden" aria-hidden="true">☀️</span>
+            <span class="hidden sm:inline">Theme</span>
+          </button>
+          <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-fuchsia-500 hover:from-indigo-400 hover:to-fuchsia-400 text-white text-sm shadow-lg shadow-indigo-900/20">
+            <span>Let’s Connect</span> <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative">
+    <div class="max-w-6xl mx-auto px-5 pt-14 pb-10 md:pt-20 md:pb-16">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div class="reveal in-view md:reveal">
+          <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+            <span class="block text-white">Bathula Balaji Varma</span>
+            <span class="block text-2xl md:text-3xl font-semibold mt-3 bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-cyan-200 to-fuchsia-300 shine-underline">
+              AI/ML Enthusiast • Cybersecurity Learner
+            </span>
+          </h1>
+          <p class="mt-6 text-white/80 leading-relaxed">
+            Passionate about building intelligent systems and enhancing digital security. Skilled in Python, data preprocessing, and ML algorithms with hands-on experience in model development and evaluation. Eager to contribute to innovative projects in AI, ML, or data science.
+          </p>
+
+          <div class="mt-7 flex flex-wrap items-center gap-3">
+            <a href="#projects" class="px-5 py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-fuchsia-500 hover:from-indigo-400 hover:to-fuchsia-400 text-white font-semibold shadow-lg shadow-indigo-900/25 lift">View Work</a>
+          </div>
+
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full bg-white/10 text-white/80 text-sm">Python</span>
+            <span class="px-3 py-1 rounded-full bg-white/10 text-white/80 text-sm">Data Preprocessing</span>
+            <span class="px-3 py-1 rounded-full bg-white/10 text-white/80 text-sm">ML Algorithms</span>
+            <span class="px-3 py-1 rounded-full bg-white/10 text-white/80 text-sm">AI Concepts</span>
+            <span class="px-3 py-1 rounded-full bg-white/10 text-white/80 text-sm">Cybersecurity Tools</span>
+          </div>
+        </div>
+
+        <!-- Decorative profile emblem using SVG -->
+        <div class="relative reveal">
+          <div class="relative mx-auto w-64 h-64 md:w-80 md:h-80 rounded-3xl p-1 bg-gradient-to-br from-indigo-400/60 via-cyan-400/60 to-fuchsia-400/60 backdrop-blur">
+            <div class="w-full h-full rounded-2xl bg-slate-900/60 border border-white/10 flex items-center justify-center overflow-hidden">
+              <svg viewBox="0 0 200 200" class="w-48 h-48">
+                <defs>
+                  <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#a78bfa"/>
+                    <stop offset="50%" stop-color="#22d3ee"/>
+                    <stop offset="100%" stop-color="#f0abfc"/>
+                  </linearGradient>
+                </defs>
+                <circle cx="100" cy="100" r="72" fill="url(#grad1)" opacity="0.25"/>
+                <g fill="none" stroke="url(#grad1)" stroke-width="3">
+                  <path d="M20,120 C60,40 140,40 180,120"/>
+                  <path d="M30,135 C70,70 130,70 170,135" opacity="0.8"/>
+                  <path d="M40,150 C80,100 120,100 160,150" opacity="0.6"/>
+                </g>
+                <g transform="translate(50,60)">
+                  <rect x="0" y="0" rx="10" width="100" height="70" fill="url(#grad1)" opacity="0.08" />
+                  <circle cx="20" cy="35" r="18" stroke="url(#grad1)" />
+                  <rect x="48" y="20" width="40" height="6" rx="3" fill="url(#grad1)"/>
+                  <rect x="48" y="35" width="50" height="6" rx="3" fill="url(#grad1)" opacity=".8"/>
+                  <rect x="48" y="50" width="36" height="6" rx="3" fill="url(#grad1)" opacity=".6"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <div class="absolute -bottom-4 -left-4 bg-white/10 text-white/90 text-xs px-3 py-1 rounded-full border border-white/10 backdrop-blur">Vijayawada, 521456</div>
+          <div class="absolute -top-4 -right-4 bg-white/10 text-white/90 text-xs px-3 py-1 rounded-full border border-white/10 backdrop-blur">Open to Opportunities</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-12 md:py-16">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="grid lg:grid-cols-3 gap-8 items-start">
+        <div class="lg:col-span-2 reveal">
+          <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+            <h2 class="text-2xl font-bold">Professional Summary</h2>
+            <p class="mt-3 text-white/80 leading-relaxed">
+              Passionate about building intelligent systems and enhancing digital security. Eager to contribute technical expertise and problem-solving skills in a dynamic tech-driven environment. Strong foundation in AI concepts with practical exposure to model development and evaluation.
+            </p>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+            <h3 class="text-xl font-bold">Quick Facts</h3>
+            <ul class="mt-3 space-y-2 text-white/80">
+              <li>🏠 Vijayawada, 521456</li>
+              <li>📞 <button id="copyPhone" class="underline decoration-dotted hover:text-white">9346564787</button></li>
+              <li>✉️ <button id="copyEmail" class="underline decoration-dotted hover:text-white">bpadma024@gmail.com</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="py-12 md:py-16">
+    <div class="max-w-6xl mx-auto px-5">
+      <h2 class="text-3xl font-extrabold">Internships</h2>
+
+      <div class="mt-8 grid md:grid-cols-2 gap-6">
+        <article class="p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.03] border border-white/10 lift reveal">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xl font-bold">Machine Learning Intern</h3>
+            <span class="text-xs px-2 py-1 rounded-full bg-white/10 border border-white/10">2023</span>
+          </div>
+          <p class="mt-1 text-white/70">BIST Technology</p>
+          <p class="mt-3 text-white/80">
+            Worked on developing predictive models and analyzing datasets for intelligent decision-making. Focused on Python, data preprocessing, and ML algorithms with practical model evaluation.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-200 text-xs">Python</span>
+            <span class="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-200 text-xs">Pandas</span>
+            <span class="px-3 py-1 rounded-full bg-fuchsia-500/20 text-fuchsia-200 text-xs">Modeling</span>
+          </div>
+        </article>
+
+        <article class="p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.03] border border-white/10 lift reveal">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xl font-bold">Cybersecurity Intern</h3>
+            <span class="text-xs px-2 py-1 rounded-full bg-white/10 border border-white/10">2025</span>
+          </div>
+          <p class="mt-1 text-white/70">Tega (Sand Space Technologies)</p>
+          <p class="mt-3 text-white/80">
+            Explored digital security frameworks and ethical practices. Proficient in Python, data analysis, ML algorithms, and cybersecurity tools to support secure, data-driven environments.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-200 text-xs">Security</span>
+            <span class="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-200 text-xs">Data Analysis</span>
+            <span class="px-3 py-1 rounded-full bg-violet-500/20 text-violet-200 text-xs">ML + Security</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-12 md:py-16">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="flex items-end justify-between gap-4">
+        <h2 class="text-3xl font-extrabold">Projects</h2>
+        <div class="flex items-center gap-2 text-sm">
+          <button data-filter="all" class="proj-filter active px-3 py-1 rounded-full bg-white/10 border border-white/10">All</button>
+          <button data-filter="ml" class="proj-filter px-3 py-1 rounded-full hover:bg-white/10 border border-white/10">ML</button>
+          <button data-filter="security" class="proj-filter px-3 py-1 rounded-full hover:bg-white/10 border border-white/10">Security</button>
+        </div>
+      </div>
+
+      <div id="projectGrid" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Project 1 -->
+        <article data-tags="ml" class="p-6 rounded-2xl bg-white/5 border border-white/10 lift reveal">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center">🤖</div>
+            <div>
+              <h3 class="font-bold">Predictive Modeling Suite</h3>
+              <p class="text-xs text-white/60">BIST Technology • 2023</p>
+            </div>
+          </div>
+          <p class="mt-3 text-white/80">
+            Built and evaluated models for intelligent decision-making, focusing on clean pipelines from preprocessing to validation.
+          </p>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="text-xs text-white/60">Python • Scikit-learn</span>
+            <button class="more-btn text-indigo-300 hover:text-indigo-200 text-sm" data-modal="p1">Learn more</button>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article data-tags="security" class="p-6 rounded-2xl bg-white/5 border border-white/10 lift reveal">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center">🔐</div>
+            <div>
+              <h3 class="font-bold">Digital Security Frameworks</h3>
+              <p class="text-xs text-white/60">TEGA • 2025</p>
+            </div>
+          </div>
+          <p class="mt-3 text-white/80">
+            Studied and applied ethical security practices and frameworks to strengthen system resilience.
+          </p>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="text-xs text-white/60">Cybersecurity • Ethics</span>
+            <button class="more-btn text-indigo-300 hover:text-indigo-200 text-sm" data-modal="p2">Learn more</button>
+          </div>
+        </article>
+
+        <!-- Project 3 (Combined ML + Security) -->
+        <article data-tags="ml security" class="p-6 rounded-2xl bg-white/5 border border-white/10 lift reveal">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-fuchsia-500/20 flex items-center justify-center">🧠</div>
+            <div>
+              <h3 class="font-bold">Anomaly Detection Sandbox</h3>
+              <p class="text-xs text-white/60">Self-Driven • Demo</p>
+            </div>
+          </div>
+          <p class="mt-3 text-white/80">
+            Conceptual sandbox for detecting unusual patterns in activity logs using classic ML techniques.
+          </p>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="text-xs text-white/60">EDA • Evaluation</span>
+            <button class="more-btn text-indigo-300 hover:text-indigo-200 text-sm" data-modal="p3">Learn more</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="py-12 md:py-16">
+    <div class="max-w-6xl mx-auto px-5">
+      <h2 class="text-3xl font-extrabold">Academic History</h2>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 reveal">
+          <h3 class="font-bold">MVR College of Engineering and Technology</h3>
+          <p class="text-white/70 mt-1">B.Sc. Computer Engineering (Artificial Engineering)</p>
+          <p class="text-white/60 mt-1">2022 – 2026</p>
+          <p class="mt-2 text-emerald-200 font-semibold">GPA: 8.4 (up to 4-1)</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 reveal">
+          <h3 class="font-bold">Sri Chaitanya College</h3>
+          <p class="text-white/70 mt-1">Intermediate</p>
+          <p class="text-white/60 mt-1">2020 – 2022</p>
+          <p class="mt-2 text-emerald-200 font-semibold">Score: 80%</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 reveal">
+          <h3 class="font-bold">Chaitanya Bharathi Innovative School</h3>
+          <p class="text-white/60 mt-1">2019 – 2020</p>
+          <p class="mt-2 text-emerald-200 font-semibold">GPA: 10.0</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications" class="py-12 md:py-16">
+    <div class="max-w-6xl mx-auto px-5">
+      <h2 class="text-3xl font-extrabold">Certifications</h2>
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 reveal">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center">🎓</div>
+            <div>
+              <h3 class="font-bold">Machine Learning</h3>
+              <p class="text-white/60 text-sm">BIST Technologies • 2023</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 reveal">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-cyan-500/20 flex items-center justify-center">🛡️</div>
+            <div>
+              <h3 class="font-bold">Cyber Security Moderation</h3>
+              <p class="text-white/60 text-sm">HP Life • 2024</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 reveal">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-fuchsia-500/20 flex items-center justify-center">📜</div>
+            <div>
+              <h3 class="font-bold">TEGA Program</h3>
+              <p class="text-white/60 text-sm">Sand Space Technologies • 2025</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-12 md:py-16">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="grid lg:grid-cols-2 gap-8 items-start">
+        <div class="reveal">
+          <h2 class="text-3xl font-extrabold">Contact</h2>
+          <p class="mt-3 text-white/80">I’d love to connect about AI, ML, or cybersecurity opportunities.</p>
+
+          <div class="mt-6 space-y-3">
+            <a href="mailto:bpadma024@gmail.com" class="group flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10">
+              <span>✉️</span>
+              <div>
+                <div class="font-semibold">Email</div>
+                <div class="text-white/70 group-hover:text-white/90">bpadma024@gmail.com</div>
+              </div>
+            </a>
+            <a href="tel:+919346564787" class="group flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10">
+              <span>📞</span>
+              <div>
+                <div class="font-semibold">Phone</div>
+                <div class="text-white/70 group-hover:text-white/90">+91 93465 64787</div>
+              </div>
+            </a>
+            <div class="flex flex-wrap gap-3 pt-2">
+              <button id="copyBoth" class="px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-fuchsia-500 hover:from-indigo-400 hover:to-fuchsia-400 text-white font-semibold">Copy All Details</button>
+              <a href="#home" class="px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10">Back to top</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+            <h3 class="text-xl font-bold">What I bring</h3>
+            <ul class="mt-3 space-y-2 text-white/80">
+              <li>• Clean data pipelines and thoughtful evaluation</li>
+              <li>• Curiosity for secure, ethical systems</li>
+              <li>• Strong fundamentals with hands-on learning</li>
+            </ul>
+            <div class="mt-6 p-4 rounded-xl bg-gradient-to-br from-indigo-500/10 to-fuchsia-500/10 border border-white/10">
+              <p class="text-white/80">
+                Available for internships, projects, and collaborations. Let’s build something smart and secure.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modals -->
+  <div id="modalBackdrop" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center p-5">
+    <div class="max-w-lg w-full rounded-2xl bg-slate-900 border border-white/10 shadow-2xl">
+      <div class="flex items-center justify-between p-5 border-b border-white/10">
+        <h3 id="modalTitle" class="text-xl font-bold">Project</h3>
+        <button id="modalClose" class="px-3 py-1 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10">✕</button>
+      </div>
+      <div id="modalBody" class="p-5 text-white/80"></div>
+      <div class="p-5 border-t border-white/10 flex justify-end">
+        <button id="modalOk" class="px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-fuchsia-500 hover:from-indigo-400 hover:to-fuchsia-400 text-white font-semibold">Nice!</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-10 text-center text-white/60">
+    <div class="max-w-6xl mx-auto px-5">
+      <p>© <span id="year"></span> Bathula Balaji Varma · Built with care</p>
+    </div>
+  </footer>
+
+  <!-- Back to top floating -->
+  <button id="toTop" class="to-top fixed bottom-6 right-6 md:bottom-8 md:right-8 px-4 py-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 shadow-lg shadow-black/20">↑</button>
+
+  <script>
+    // Theme toggle with memory
+    const themeToggle = document.getElementById('themeToggle');
+    const storedTheme = localStorage.getItem('bbv-theme');
+    if (storedTheme === 'light') document.documentElement.classList.remove('dark');
+    else document.documentElement.classList.add('dark'); // default to dark look
+    themeToggle?.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('bbv-theme', isDark ? 'dark' : 'light');
+    });
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver(entries => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in-view');
+          observer.unobserve(e.target);
+        }
+      }
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Back to top show/hide
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) toTop.classList.add('show');
+      else toTop.classList.remove('show');
+    });
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Copy helpers
+    const phone = '9346564787';
+    const email = 'bpadma024@gmail.com';
+    const address = 'Vijayawada, 521456';
+    const toast = (msg) => {
+      const t = document.createElement('div');
+      t.textContent = msg;
+      t.className = 'fixed bottom-6 left-1/2 -translate-x-1/2 px-4 py-2 rounded-lg bg-white/10 border border-white/10 text-white/90 backdrop-blur z-[60]';
+      document.body.appendChild(t);
+      setTimeout(() => { t.style.opacity = '0'; t.style.transform = 'translate(-50%, 8px)'; }, 1400);
+      setTimeout(() => t.remove(), 1800);
+    };
+    document.getElementById('copyPhone')?.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(phone); toast('Phone copied'); } catch {}
+    });
+    document.getElementById('copyEmail')?.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(email); toast('Email copied'); } catch {}
+    });
+    document.getElementById('copyBoth')?.addEventListener('click', async () => {
+      const text = `Name: Bathula Balaji Varma\nEmail: ${email}\nPhone: +91 ${phone}\nAddress: ${address}`;
+      try { await navigator.clipboard.writeText(text); toast('Contact details copied'); } catch {}
+    });
+
+    // Project filters
+    const filterBtns = document.querySelectorAll('.proj-filter');
+    const cards = document.querySelectorAll('#projectGrid article');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('bg-white/10', 'border-white/10'));
+        btn.classList.add('bg-white/10', 'border-white/10');
+        const f = btn.dataset.filter;
+        cards.forEach(c => {
+          if (f === 'all' || c.dataset.tags.includes(f)) {
+            c.style.display = '';
+            c.classList.add('in-view');
+          } else {
+            c.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Project modals content
+    const modalData = {
+      p1: {
+        title: 'Predictive Modeling Suite — BIST Technology (2023)',
+        body: `
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Prepared datasets with careful preprocessing and feature handling.</li>
+            <li>Trained and compared multiple models to support decision-making.</li>
+            <li>Evaluated performance using clear, fair metrics for reliability.</li>
+          </ul>
+        `
+      },
+      p2: {
+        title: 'Digital Security Frameworks — TEGA (2025)',
+        body: `
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Explored security frameworks and ethical best practices.</li>
+            <li>Applied structured thinking to assess and reduce risks.</li>
+            <li>Blended data skills with secure-by-design approaches.</li>
+          </ul>
+        `
+      },
+      p3: {
+        title: 'Anomaly Detection Sandbox — Demo',
+        body: `
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Experimented with classic algorithms for unusual pattern detection.</li>
+            <li>Set up repeatable steps for exploration and validation.</li>
+            <li>Designed simple visuals to interpret model behavior.</li>
+          </ul>
+        `
+      }
+    };
+    const backdrop = document.getElementById('modalBackdrop');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
+    document.querySelectorAll('.more-btn').forEach(b => {
+      b.addEventListener('click', () => {
+        const k = b.dataset.modal;
+        modalTitle.textContent = modalData[k].title;
+        modalBody.innerHTML = modalData[k].body;
+        backdrop.classList.remove('hidden');
+        backdrop.classList.add('flex');
+      });
+    });
+    document.getElementById('modalClose').addEventListener('click', () => {
+      backdrop.classList.add('hidden'); backdrop.classList.remove('flex');
+    });
+    document.getElementById('modalOk').addEventListener('click', () => {
+      backdrop.classList.add('hidden'); backdrop.classList.remove('flex');
+    });
+    backdrop.addEventListener('click', (e) => {
+      if (e.target === backdrop) {
+        backdrop.classList.add('hidden'); backdrop.classList.remove('flex');
+      }
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9722d61677a285e8',t:'MTc1NTcwMjgyMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
